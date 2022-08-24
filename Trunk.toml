@@ -1,0 +1,4 @@
+[[hooks]]
+stage = "pre_build"
+command = "tailwindcss"
+command_arguments = ["-i", "styles/input.css", "-o", "styles/output.css", "--minify"]
