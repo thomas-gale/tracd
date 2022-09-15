@@ -3,10 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-
   @font-face {
     font-family: 'FiraCode';
-    src: url('/resources/fira_code/FiraCode-VariableFont_wght.ttf');
+    src: url('/fira_code/FiraCode-VariableFont_wght.ttf');
   }
 
   html,
