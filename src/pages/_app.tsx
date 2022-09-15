@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
       <Head>
         <title>{config.NAME}</title>
         <meta name="description" content={config.DESCRIPTION} />
-        </Head>
+      </Head>
       <Component {...pageProps} />
     </>
   );

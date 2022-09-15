@@ -108,3 +108,6 @@ resources/focalpoints
 
 # Next js static output
 out/
+
+# Secrets
+.env*
