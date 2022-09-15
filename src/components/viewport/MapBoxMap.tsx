@@ -29,15 +29,12 @@ export const MapBoxMap = () => {
     });
 
     // Look at Brum ;)
-
     const camera = mapboxMap.getFreeCameraOptions();
-
     camera.position = mapboxgl.MercatorCoordinate.fromLngLat(
       [-1.898575, 50], // LngLat
       500000 // Altitude
     );
     camera.lookAtPoint([-1.898575, 52.489471]);
-
     mapboxMap.setFreeCameraOptions(camera);
 
     // save the map object to React.useState
