@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-page-custom-font */
 import React from "react";
 import { Html, Head, Main, NextScript } from "next/document";
 
