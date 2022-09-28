@@ -1,4 +1,5 @@
 import Map, { Source, Layer, LayerProps } from "react-map-gl";
+import { BrumCube } from "./layer/BrumCube";
 
 const geojson: GeoJSON.FeatureCollection<
   GeoJSON.Geometry,
@@ -37,6 +38,7 @@ export const MapBox = () => {
       >
         <Source id="my-data" type="geojson" data={geojson}>
           <Layer {...layerStyle} />
+          <BrumCube />
         </Source>
       </Map>
     </div>
