@@ -22,7 +22,7 @@ export const DeckCanvas = () => {
     () =>
       CreateSimpleCubeMeshLayer([
         {
-          position: [-1.898575, 52.4896],
+          position: [-1.898575, 52.4898],
           angle: 0,
           color: [255, 0, 0],
         },
@@ -36,7 +36,7 @@ export const DeckCanvas = () => {
         {
           position: [-1.898575, 52.489471],
           angle: 0,
-          color: [255, 0, 0],
+          color: [200, 200, 200],
         },
       ]),
     []

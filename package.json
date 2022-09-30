@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@loaders.gl/core": "^3.2.9",
-    "@loaders.gl/gltf": "^3.2.9",
+    "@loaders.gl/obj": "^3.2.9",
     "@luma.gl/core": "^8.5.16",
     "@luma.gl/engine": "^8.5.16",
     "@luma.gl/webgl": "^8.5.16",
