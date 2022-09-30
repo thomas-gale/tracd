@@ -2,12 +2,10 @@ import React, { useMemo } from "react";
 import DeckGL, { SimpleMeshLayer } from "deck.gl/typed";
 import { Map } from "react-map-gl";
 
-import { BrumCube } from "./layer/BrumCube";
-
 import "mapbox-gl/dist/mapbox-gl.css";
 import {
   CreateSimpleCubeMeshLayer,
-  CreateSimpleGlbMeshLayer,
+  CreateSimpleLoadedMeshLayer,
 } from "./layer/SimpleMeshLayer";
 
 // Viewport settings
@@ -32,11 +30,11 @@ export const DeckCanvas = () => {
     []
   );
 
-  const simpleGlbMeshLayer1 = useMemo(
+  const simpleLoadedMeshLayer = useMemo(
     () =>
-      CreateSimpleGlbMeshLayer("/geometry/factory_room.glb", [
+      CreateSimpleLoadedMeshLayer([
         {
-          position: [-1.898575, 52.4897],
+          position: [-1.898575, 52.489471],
           angle: 0,
           color: [255, 0, 0],
         },
@@ -48,15 +46,13 @@ export const DeckCanvas = () => {
     <DeckGL
       initialViewState={INITIAL_VIEW_STATE}
       controller={true}
-      layers={[simpleCubeMeshLayer, simpleGlbMeshLayer1]}
+      layers={[simpleCubeMeshLayer, simpleLoadedMeshLayer]}
     >
       <Map
         mapStyle="mapbox://styles/mapbox/streets-v11"
         mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
         projection="globe"
-      >
-        <BrumCube />
-      </Map>
+      ></Map>
     </DeckGL>
   );
 };

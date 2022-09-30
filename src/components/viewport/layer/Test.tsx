@@ -29,7 +29,7 @@ const modelTransform = {
 };
 
 // Create a cube geometry using custom map gl layer
-export const BrumCube = () => {
+export const Test = () => {
   const camera = useRef<THREE.Camera>();
   const scene = useRef<THREE.Scene>();
   const renderer = useRef<THREE.WebGLRenderer>();
@@ -37,7 +37,7 @@ export const BrumCube = () => {
 
   return (
     <Layer
-      id="brum-cube"
+      id="test"
       type="custom"
       renderingMode="3d"
       onAdd={(map, gl) => {
