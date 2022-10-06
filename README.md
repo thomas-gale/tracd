@@ -1,4 +1,11 @@
 # Tracd.eth
+Traced supply chains for great good.
+
+## Dev
+```shell
+# .env.local
+NEXT_PUBLIC_MAPBOX_TOKEN=*****************
+```
 
 ```shell
 yarn dev

@@ -7,6 +7,7 @@ import {
   CreateSimpleCubeMeshLayer,
   CreateSimpleLoadedMeshLayer,
 } from "./layer/SimpleMeshLayer";
+import { useAppSelector } from "../../hooks/state";
 
 // Viewport settings
 const INITIAL_VIEW_STATE = {
@@ -18,16 +19,20 @@ const INITIAL_VIEW_STATE = {
 };
 
 export const DeckCanvas = () => {
+  const focusedCoordinate = useAppSelector(
+    (state) => state.map.focusedCoordinate
+  );
+
   const simpleCubeMeshLayer = useMemo(
     () =>
       CreateSimpleCubeMeshLayer([
         {
-          position: [-1.898575, 52.4898],
+          position: focusedCoordinate,
           angle: 0,
           color: [255, 0, 0],
         },
       ]),
-    []
+    [focusedCoordinate]
   );
 
   const simpleLoadedMeshLayer = useMemo(
