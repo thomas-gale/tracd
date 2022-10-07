@@ -1,38 +1,29 @@
 import React, { useMemo } from "react";
 import DeckGL, { SimpleMeshLayer } from "deck.gl/typed";
-import { Map } from "react-map-gl";
+import { Map, ViewState } from "react-map-gl";
 
 import "mapbox-gl/dist/mapbox-gl.css";
 import {
   CreateSimpleCubeMeshLayer,
   CreateSimpleLoadedMeshLayer,
 } from "./layer/SimpleMeshLayer";
-import { useAppSelector } from "../../hooks/state";
-
-// Viewport settings
-const INITIAL_VIEW_STATE = {
-  longitude: -1.898575,
-  latitude: 52.489471,
-  zoom: 20,
-  pitch: 0,
-  bearing: 0,
-};
+import { useAppDispatch, useAppSelector } from "../../hooks/state";
+import { setViewState } from "../../state/map/mapslice";
 
 export const DeckCanvas = () => {
-  const focusedCoordinate = useAppSelector(
-    (state) => state.map.focusedCoordinate
-  );
+  const viewState = useAppSelector((state) => state.map.viewState);
+  const dispatch = useAppDispatch();
 
   const simpleCubeMeshLayer = useMemo(
     () =>
       CreateSimpleCubeMeshLayer([
         {
-          position: focusedCoordinate,
+          position: [-1.898575, 52.489871],
           angle: 0,
           color: [255, 0, 0],
         },
       ]),
-    [focusedCoordinate]
+    []
   );
 
   const simpleLoadedMeshLayer = useMemo(
@@ -49,7 +40,11 @@ export const DeckCanvas = () => {
 
   return (
     <DeckGL
-      initialViewState={INITIAL_VIEW_STATE}
+      viewState={viewState}
+      onViewStateChange={({ viewState }) => {
+        dispatch(setViewState(viewState as ViewState));
+        return viewState;
+      }}
       controller={true}
       layers={[simpleCubeMeshLayer, simpleLoadedMeshLayer]}
     >

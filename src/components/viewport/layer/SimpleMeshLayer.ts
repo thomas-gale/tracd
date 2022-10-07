@@ -1,8 +1,5 @@
-import { SimpleMeshLayerProps } from "@deck.gl/mesh-layers/typed";
-import { LayerProps, SimpleMeshLayer } from "deck.gl/typed";
+import { SimpleMeshLayer } from "deck.gl/typed";
 import { CubeGeometry } from "@luma.gl/engine";
-import { registerLoaders } from "@loaders.gl/core";
-import { GLBLoader, GLTFLoader } from "@loaders.gl/gltf";
 import { OBJLoader } from "@loaders.gl/obj";
 
 export interface MeshInstance {
@@ -19,6 +16,11 @@ export const CreateSimpleCubeMeshLayer = (instances: MeshInstance[]) => {
     getPosition: (d) => d.position,
     getColor: (d) => d.color,
     getOrientation: (d) => [0, d.angle, 0],
+    pickable: true,
+    onClick(pickingInfo, event) {
+      console.log("pickingInfo", pickingInfo);
+      console.log("event", event);
+    },
   });
 };
 
