@@ -1,14 +1,14 @@
 import React, { useMemo } from "react";
-import DeckGL, { SimpleMeshLayer } from "deck.gl/typed";
-import { Map, ViewState } from "react-map-gl";
-
-import "mapbox-gl/dist/mapbox-gl.css";
+import DeckGL from "deck.gl/typed";
+import { Map } from "react-map-gl";
 import {
   CreateSimpleCubeMeshLayer,
   CreateSimpleLoadedMeshLayer,
 } from "./layer/SimpleMeshLayer";
 import { useAppDispatch, useAppSelector } from "../../hooks/state";
 import { setViewState } from "../../state/map/mapslice";
+import { ViewState } from "../../types/map/ViewState";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 export const DeckCanvas = () => {
   const viewState = useAppSelector((state) => state.map.viewState);

@@ -1,12 +1,7 @@
 import { SimpleMeshLayer } from "deck.gl/typed";
 import { CubeGeometry } from "@luma.gl/engine";
 import { OBJLoader } from "@loaders.gl/obj";
-
-export interface MeshInstance {
-  position: [number, number];
-  angle: number;
-  color: [number, number, number];
-}
+import { MeshInstance } from "../../../types/geometry/MeshInstance";
 
 export const CreateSimpleCubeMeshLayer = (instances: MeshInstance[]) => {
   return new SimpleMeshLayer({
