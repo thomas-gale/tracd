@@ -4,11 +4,13 @@ import type { WorkflowEdgeData } from "../../types/tracd/workflow/WorkflowEdgeDa
 import type { WorkflowNodeData } from "../../types/tracd/workflow/WorkflowNodeData";
 
 interface TracdState {
+  selectedWorkflowNodeId: string | null;
   workflowNodes: Node<WorkflowNodeData>[];
   workflowEdges: Edge<WorkflowEdgeData>[];
 }
 
 const initialState: TracdState = {
+  selectedWorkflowNodeId: null,
   workflowNodes: [
     {
       id: "1",
@@ -36,6 +38,13 @@ export const tracdSlice = createSlice({
   name: "tracd",
   initialState,
   reducers: {
+    setSelectedWorkflowNode: (state, action: PayloadAction<string | null>) => {
+      state.selectedWorkflowNodeId = action.payload;
+      state.workflowNodes = state.workflowNodes.map((node) => ({
+        ...node,
+        selected: node.id == action.payload,
+      }));
+    },
     setWorkflowNodes: (
       state,
       action: PayloadAction<Node<WorkflowNodeData>[]>
@@ -51,5 +60,6 @@ export const tracdSlice = createSlice({
   },
 });
 
-export const { setWorkflowNodes } = tracdSlice.actions;
+export const { setSelectedWorkflowNode, setWorkflowNodes, setWorkflowEdges } =
+  tracdSlice.actions;
 export default tracdSlice.reducer;

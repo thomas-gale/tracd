@@ -16,7 +16,15 @@ export const DeckCanvas = () => {
     <DeckGL
       viewState={viewState}
       onViewStateChange={({ viewState }) => {
-        dispatch(setViewState(viewState as ViewState));
+        dispatch(
+          setViewState({
+            longitude: viewState.longitude,
+            latitude: viewState.latitude,
+            zoom: viewState.zoom,
+            pitch: viewState.pitch,
+            bearing: viewState.bearing,
+          })
+        );
         return viewState;
       }}
       controller={true}

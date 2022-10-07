@@ -24,14 +24,13 @@ export const Graph = () => {
           nodes={workflowNodes}
           edges={workflowEdges}
           onNodesChange={(changes: NodeChange[]) => {
-            console.log("Node Change", changes);
+            // console.log("Node Change", changes);
             // TODO - dispatch to redux
           }}
           nodesConnectable={false}
           fitView={true}
           title="Tracd Graph"
         >
-          <MiniMap />
           <Controls />
           <Background />
         </ReactFlow>
