@@ -28,6 +28,7 @@ export const Graph = () => {
             // TODO - dispatch to redux
           }}
           nodesConnectable={false}
+          fitView={true}
           title="Tracd Graph"
         >
           <MiniMap />
