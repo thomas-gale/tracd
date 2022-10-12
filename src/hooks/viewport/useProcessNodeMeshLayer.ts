@@ -2,17 +2,17 @@ import { CubeGeometry } from "@luma.gl/engine";
 import { SimpleMeshLayer } from "deck.gl/typed";
 import { useMemo } from "react";
 import { useAppDispatch, useAppSelector } from "../state";
-import { setSelectedWorkflowNode } from "../../state/tracd/tracdslice";
+import { setSelectedProcessNode } from "../../state/tracd/tracdslice";
 
-export const useWorkflowNodeMeshLayer = () => {
+export const useProcessNodeMeshLayer = () => {
   const dispatch = useAppDispatch();
-  const workflowNodes = useAppSelector((state) => state.tracd.workflowNodes);
-  const selectedWorkflowNode = useAppSelector(
-    (state) => state.tracd.selectedWorkflowNodeId
+  const processNodes = useAppSelector((state) => state.tracd.processNodes);
+  const selectedProcessNode = useAppSelector(
+    (state) => state.tracd.selectedProcessNodeId
   );
 
-  const workflowNodeLocations = useMemo(() => {
-    return workflowNodes.map((node) => {
+  const processNodeLocations = useMemo(() => {
+    return processNodes.map((node) => {
       return {
         id: node.id,
         position: node.data.location,
@@ -20,25 +20,25 @@ export const useWorkflowNodeMeshLayer = () => {
         angle: 0,
       };
     });
-  }, [workflowNodes]);
+  }, [processNodes]);
 
   return useMemo(
     () =>
       new SimpleMeshLayer({
-        id: "workflow-node-mesh-layer",
-        data: workflowNodeLocations,
+        id: "process-node-mesh-layer",
+        data: processNodeLocations,
         mesh: new CubeGeometry(),
         getPosition: (d) => d.position,
         getColor: (d) => d.color,
         getOrientation: (d) => [0, d.angle, 0],
         getScale: (d) =>
-          d.id == selectedWorkflowNode ? [10, 10, 10] : [5, 5, 5],
+          d.id == selectedProcessNode ? [10, 10, 10] : [5, 5, 5],
         pickable: true,
         onClick({ object }) {
-          dispatch(setSelectedWorkflowNode(object.id));
+          dispatch(setSelectedProcessNode(object.id));
           console.log(object);
         },
       }),
-    [dispatch, selectedWorkflowNode, workflowNodeLocations]
+    [dispatch, selectedProcessNode, processNodeLocations]
   );
 };

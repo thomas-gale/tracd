@@ -1,5 +1,5 @@
 import { TracdNodeData } from "../TracdNodeData";
 
-export interface WorkflowNodeData extends TracdNodeData {
+export interface ProcessNodeData extends TracdNodeData {
   label: string;
 }

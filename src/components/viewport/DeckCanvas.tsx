@@ -4,13 +4,15 @@ import { Map } from "react-map-gl";
 import { useAppDispatch, useAppSelector } from "../../hooks/state";
 import { setViewState } from "../../state/map/mapslice";
 import { ViewState } from "../../types/map/ViewState";
-import { useWorkflowNodeMeshLayer } from "../../hooks/viewport/useWorkflowNodeMeshLayer";
+import { useProcessNodeMeshLayer } from "../../hooks/viewport/useProcessNodeMeshLayer";
+import { useMatterNodeMeshLayer } from "../../hooks/viewport/useMatterNodeMeshLayer";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 export const DeckCanvas = () => {
   const viewState = useAppSelector((state) => state.map.viewState);
   const dispatch = useAppDispatch();
-  const workflowNodeMeshLayer = useWorkflowNodeMeshLayer();
+  const processNodeMeshLayer = useProcessNodeMeshLayer();
+  const matterNodeMeshLayer = useMatterNodeMeshLayer();
 
   return (
     <DeckGL
@@ -28,7 +30,7 @@ export const DeckCanvas = () => {
         return viewState;
       }}
       controller={true}
-      layers={[workflowNodeMeshLayer]}
+      layers={[processNodeMeshLayer, matterNodeMeshLayer]}
     >
       <Map
         mapStyle="mapbox://styles/mapbox/streets-v11"

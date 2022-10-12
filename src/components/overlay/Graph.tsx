@@ -1,31 +1,33 @@
-import { useCallback } from "react";
 import ReactFlow, {
-  MiniMap,
   Controls,
   Background,
-  useNodesState,
-  useEdgesState,
-  addEdge,
   NodeChange,
-  EdgeChange,
+  NodeSelectionChange,
 } from "reactflow";
 // 👇 you need to import the reactflow styles
 import "reactflow/dist/style.css";
-import { useAppSelector } from "../../hooks/state";
+import { useAppDispatch, useAppSelector } from "../../hooks/state";
+import { setSelectedProcessNode } from "../../state/tracd/tracdslice";
 
 export const Graph = () => {
-  const workflowNodes = useAppSelector((state) => state.tracd.workflowNodes);
-  const workflowEdges = useAppSelector((state) => state.tracd.workflowEdges);
+  const dispatch = useAppDispatch();
+  const processNodes = useAppSelector((state) => state.tracd.processNodes);
+  const processEdges = useAppSelector((state) => state.tracd.processEdges);
 
   return (
     <div className="flex min-h-0 w-full h-1/2 mt-auto z-50">
       <div className="p-4 m-3 w-full bg-white bg-opacity-80 flex flex-row items-center shadow-md rounded-xl pointer-events-auto">
         <ReactFlow
-          nodes={workflowNodes}
-          edges={workflowEdges}
+          nodes={processNodes}
+          edges={processEdges}
           onNodesChange={(changes: NodeChange[]) => {
-            // console.log("Node Change", changes);
-            // TODO - dispatch to redux
+            changes.forEach((change) => {
+              if (change.type === "select") {
+                if ((change as unknown as NodeSelectionChange).selected) {
+                  dispatch(setSelectedProcessNode(change.id));
+                }
+              }
+            });
           }}
           nodesConnectable={false}
           fitView={true}

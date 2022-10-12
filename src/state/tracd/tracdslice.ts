@@ -1,17 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { Edge, Node } from "reactflow";
-import type { WorkflowEdgeData } from "../../types/tracd/workflow/WorkflowEdgeData";
-import type { WorkflowNodeData } from "../../types/tracd/workflow/WorkflowNodeData";
+import type { ProcessEdgeData } from "../../types/tracd/process/ProcessEdgeData";
+import type { ProcessNodeData } from "../../types/tracd/process/ProcessNodeData";
+import { MatterNodeData } from "../../types/tracd/matter/MatterNodeData";
 
 interface TracdState {
-  selectedWorkflowNodeId: string | null;
-  workflowNodes: Node<WorkflowNodeData>[];
-  workflowEdges: Edge<WorkflowEdgeData>[];
+  selectedProcessNodeId: string | null;
+  processNodes: Node<ProcessNodeData>[];
+  processEdges: Edge<ProcessEdgeData>[];
+  selectedMatterNodeId: string | null;
+  matterNodes: Node<MatterNodeData>[];
 }
 
 const initialState: TracdState = {
-  selectedWorkflowNodeId: null,
-  workflowNodes: [
+  selectedProcessNodeId: null,
+  processNodes: [
     {
       id: "1",
       position: { x: 0, y: 0 },
@@ -28,9 +31,30 @@ const initialState: TracdState = {
       data: { location: [-1.898575, 52.488871], label: "Drying" },
     },
   ],
-  workflowEdges: [
+  processEdges: [
     { id: "e1-2", source: "1", target: "2", data: { label: "Transport" } },
     { id: "e2-3", source: "2", target: "3", data: { label: "Transport" } },
+  ],
+  selectedMatterNodeId: null,
+  matterNodes: [
+    {
+      id: "1",
+      position: { x: 0, y: 0 },
+      data: {
+        label: "Barley",
+        location: [-1.898575, 52.489671],
+        quantity: 100,
+      },
+    },
+    {
+      id: "2",
+      position: { x: 0, y: 0 },
+      data: {
+        label: "Germinated Malt",
+        location: [-1.898575, 52.489071],
+        quantity: 50,
+      },
+    },
   ],
 };
 
@@ -38,28 +62,43 @@ export const tracdSlice = createSlice({
   name: "tracd",
   initialState,
   reducers: {
-    setSelectedWorkflowNode: (state, action: PayloadAction<string | null>) => {
-      state.selectedWorkflowNodeId = action.payload;
-      state.workflowNodes = state.workflowNodes.map((node) => ({
+    setSelectedProcessNode: (state, action: PayloadAction<string | null>) => {
+      state.selectedProcessNodeId = action.payload;
+      state.processNodes = state.processNodes.map((node) => ({
         ...node,
         selected: node.id == action.payload,
       }));
     },
-    setWorkflowNodes: (
+    setProcessNodes: (
       state,
-      action: PayloadAction<Node<WorkflowNodeData>[]>
+      action: PayloadAction<Node<ProcessNodeData>[]>
     ) => {
-      state.workflowNodes = action.payload;
+      state.processNodes = action.payload;
     },
-    setWorkflowEdges: (
+    setProcessEdges: (
       state,
-      action: PayloadAction<Edge<WorkflowEdgeData>[]>
+      action: PayloadAction<Edge<ProcessEdgeData>[]>
     ) => {
-      state.workflowEdges = action.payload;
+      state.processEdges = action.payload;
+    },
+    setSelectedMatterNode: (state, action: PayloadAction<string | null>) => {
+      state.selectedMatterNodeId = action.payload;
+      state.matterNodes = state.matterNodes.map((node) => ({
+        ...node,
+        selected: node.id == action.payload,
+      }));
+    },
+    setMatterNodes: (state, action: PayloadAction<Node<MatterNodeData>[]>) => {
+      state.matterNodes = action.payload;
     },
   },
 });
 
-export const { setSelectedWorkflowNode, setWorkflowNodes, setWorkflowEdges } =
-  tracdSlice.actions;
+export const {
+  setSelectedProcessNode,
+  setProcessNodes,
+  setProcessEdges,
+  setSelectedMatterNode,
+  setMatterNodes,
+} = tracdSlice.actions;
 export default tracdSlice.reducer;
