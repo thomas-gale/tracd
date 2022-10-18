@@ -22,10 +22,13 @@
     "@luma.gl/shadertools": "^8.5.16",
     "@luma.gl/webgl": "^8.5.16",
     "@math.gl/core": "^3.6.3",
+    "@matterlabs/hardhat-zksync-deploy": "^0.5.1",
+    "@matterlabs/hardhat-zksync-solc": "^0.3.9",
     "@react-three/drei": "^9.30.3",
     "@react-three/fiber": "^8.7.4",
     "@reduxjs/toolkit": "^1.8.5",
     "deck.gl": "^8.8.11",
+    "ethers": "^5.7.1",
     "gl-matrix": "^3.4.3",
     "mapbox-gl": "^2.10.0",
     "next": "^12.1.5",
@@ -35,7 +38,8 @@
     "react-redux": "^8.0.4",
     "reactflow": "^11.1.0",
     "three": "^0.144.0",
-    "yarn": "^1.22.18"
+    "ts-node": "^10.9.1",
+    "zksync-web3": "^0.11.0"
   },
   "devDependencies": {
     "@types/mapbox-gl": "^2.7.5",
@@ -45,8 +49,10 @@
     "autoprefixer": "^10.4.4",
     "eslint": "8.23.1",
     "eslint-config-next": "12.3.0",
+    "hardhat": "^2.12.0",
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.24",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.3",
+    "yarn": "^1.22.18"
   }
 }
