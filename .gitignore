@@ -111,3 +111,14 @@ out/
 
 # Secrets
 .env*
+
+# Hardhat
+node_modules
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+
+cache
+artifacts

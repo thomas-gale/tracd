@@ -11,6 +11,15 @@ NEXT_PUBLIC_MAPBOX_TOKEN=*****************
 yarn dev
 ```
 
+### Hardhat
+```shell
+yarn hardhat help
+yarn hardhat test
+REPORT_GAS=true yarn  hardhat test
+yarn hardhat node
+yarn hardhat run scripts/deploy.ts
+```
+
 ## Notes
 - Treat all state in the system as NFT entities?
 https://docs.openzeppelin.com/contracts/4.x/erc721
