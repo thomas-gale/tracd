@@ -5,16 +5,16 @@ import React, { useEffect, useMemo } from "react";
 const SouthernGolddigger = (): JSX.Element => {
   const router = useRouter();
   const { id } = router.query;
-  const idn = useMemo(() => id as unknown as number, [id]);
+  const idn = useMemo(() => Number.parseInt(id as string), [id]);
 
-  if (idn === undefined) {
+  if (id === undefined) {
     return <div />;
   }
 
   return (
     <div className="h-full flex flex-col p-4 space-y-4">
       <div className="flex flex-col h-full p-4 space-y-2 rounded-xl bg-dark">
-        { idn < 0 || idn > 24 ? (
+        {Number.isNaN(idn) || idn < 0 || idn > 24 ? (
           <h2 className="bg-red-400 text-light">Unrecognized bottle</h2>
         ) : (
           <h2 className="text-light">
