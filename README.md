@@ -1,4 +1,4 @@
-# Tracd.eth
+# Tracd
 Traced supply chains for great good.
 
 ## Dev
