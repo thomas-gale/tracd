@@ -6,12 +6,12 @@ const SouthernGolddigger = (): JSX.Element => {
   const router = useRouter();
   const { id } = router.query;
 
-  useEffect(() => {
-    const id_num = id as unknown as number;
-    if (id_num < 0 || id_num > 24) {
-      router.push("/404");
-    }
-  }, [id, router]);
+  // useEffect(() => {
+  //   const id_num = id as unknown as number;
+  //   if (id_num < 0 || id_num > 24) {
+  //     router.push("/404");
+  //   }
+  // }, [id, router]);
 
   return (
     <div className="h-full flex flex-col p-4 space-y-4">
