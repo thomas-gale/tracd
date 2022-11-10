@@ -7,10 +7,14 @@ const SouthernGolddigger = (): JSX.Element => {
   const { id } = router.query;
   const idn = useMemo(() => id as unknown as number, [id]);
 
+  if (idn === undefined) {
+    return <div />;
+  }
+
   return (
     <div className="h-full flex flex-col p-4 space-y-4">
       <div className="flex flex-col h-full p-4 space-y-2 rounded-xl bg-dark">
-        {idn === undefined || idn < 0 || idn > 24 ? (
+        { idn < 0 || idn > 24 ? (
           <h2 className="bg-red-400 text-light">Unrecognized bottle</h2>
         ) : (
           <h2 className="text-light">
