@@ -4,7 +4,6 @@ import ReactFlow, {
   NodeChange,
   NodeSelectionChange,
 } from "reactflow";
-// 👇 you need to import the reactflow styles
 import "reactflow/dist/style.css";
 import { useAppDispatch, useAppSelector } from "../../hooks/state";
 import { setSelectedProcessNode } from "../../state/tracd/tracdslice";
@@ -16,7 +15,7 @@ export const Graph = () => {
 
   return (
     <div className="flex min-h-0 w-full h-1/2 mt-auto z-50">
-      <div className="p-4 m-3 w-full bg-white bg-opacity-80 flex flex-row items-center shadow-md rounded-xl pointer-events-auto">
+      <div className="p-4 m-3 w-full bg-opacity-80 flex flex-row items-center shadow-md rounded-xl pointer-events-auto">
         <ReactFlow
           nodes={processNodes}
           edges={processEdges}

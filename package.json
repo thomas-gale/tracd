@@ -29,6 +29,7 @@
     "@react-three/drei": "^9.30.3",
     "@react-three/fiber": "^8.7.4",
     "@reduxjs/toolkit": "^1.8.5",
+    "daisyui": "^2.41.0",
     "deck.gl": "^8.8.11",
     "ethers": "^5.7.1",
     "gl-matrix": "^3.4.3",

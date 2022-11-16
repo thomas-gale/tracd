@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
         <meta name="description" content={config.DESCRIPTION} />
       </Head>
       <ReduxProvider store={store}>
-        <Component {...pageProps} />
+        <Component data-theme="tracd" {...pageProps} />
       </ReduxProvider>
     </>
   );
