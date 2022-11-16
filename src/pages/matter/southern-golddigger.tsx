@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Image from "next/image";
 import React, { useMemo } from "react";
 
 // A two step component that allows the user to first select an IPFS storage provider and then allows them to supply the hash to the webapp.
@@ -13,7 +14,7 @@ const SouthernGolddigger = (): JSX.Element => {
 
   return (
     <div className="h-full flex flex-col p-4 space-y-4">
-      <div className="flex flex-col h-full p-4 space-y-2 rounded-xl bg-dark">
+      <div className="flex flex-col bg-primary text-neutral h-full p-4 space-y-2 rounded-xl bg-dark">
         {Number.isNaN(idn) || idn < 0 || idn > 24 ? (
           <h2 className="bg-error">Unrecognized bottle</h2>
         ) : (
@@ -21,6 +22,9 @@ const SouthernGolddigger = (): JSX.Element => {
             Information for bottle: <b>{idn}</b>
           </h2>
         )}
+        <picture>
+          <img alt="image of beer bottle" src="/matter/beer-bottle.png" />
+        </picture>
       </div>
     </div>
   );
