@@ -12,15 +12,15 @@ module.exports = {
     themes: [
       {
         tracd: {
-          primary: "#FDFEF6",
-          secondary: "#D1D3D3",
-          accent: "#FFEE65",
-          neutral: "#444739",
-          "base-100": "#242C25",
-          info: "#C0F7DE",
-          success: "#C0F7DE",
-          warning: "#FFAC51",
-          error: "#F87272",
+          primary: "#FDFEF6", // Husk
+          secondary: "#D1D3D3", // Titanium
+          accent: "#FFEE65", // Barley
+          neutral: "#444739", // Urban
+          "base-100": "#242C25", // Marsh
+          info: "#C0F7DE", // Dew
+          success: "#C0F7DE", // Dew
+          warning: "#FFAC51", // Rust
+          error: "#F87272", // Generic Red
         },
       },
     ],
