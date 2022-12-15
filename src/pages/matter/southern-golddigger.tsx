@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import React, { useMemo } from "react";
 import { InfoGrid } from "../../components/matter/InfoGrid";
+import { TracdTitle } from "../../components/tracd/TracdTitle";
 
 // A two step component that allows the user to first select an IPFS storage provider and then allows them to supply the hash to the webapp.
 const SouthernGolddigger = (): JSX.Element => {
@@ -24,7 +25,10 @@ const SouthernGolddigger = (): JSX.Element => {
               bottle #<b>{idn}</b>
             </h2>
             <h3>
-              <b>beer.tracd</b> southern gold digger lager​
+              <b>
+                <TracdTitle />
+              </b>{" "}
+              southern gold digger lager​
             </h3>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -98,24 +102,20 @@ const SouthernGolddigger = (): JSX.Element => {
             <div className="flex flex-col space-y-2 w-full">
               <h3 className="w-full">southern gold digger lager</h3>
               <h2 className="w-full">
-                <span>beer</span>
-                <span className="text-accent">.</span>
-                <span>tracd</span>
-                <span className="text-accent">.</span>
+                <TracdTitle subTitle="beer" />
               </h2>
             </div>
           </div>
           <div className="bg-neutral text-neutral-content p-4 px-8">
             <h1>
-              <span>tracd</span>
-              <span className="text-accent">.</span>
+              <TracdTitle />
             </h1>
             <div className="pt-2">
               Did you know that only 9% of companies measure their total
               emissions comprehensively, while 81% confess to omitting some of
               their internal (Scopes 1 and 2) emissions. Meanwhile, 66% of
               organisations do not report any of their external (Scope 3)
-              emissions[1]
+              emissions<sup>[1]</sup>
             </div>
             <div className="text-primary">
               <div className="pt-2">
@@ -133,14 +133,20 @@ const SouthernGolddigger = (): JSX.Element => {
               </div>
               <h3 className="pt-2">5% alcohol</h3>
               <h2 className="pt-2">
-                <span>100% proof</span>
-                <span className="text-accent">.</span>
+                <span>
+                  100% <TracdTitle subTitle="proof" />
+                </span>
               </h2>
             </div>
             <div className="pt-2">
               <p className="break-words">
-                [1] BCG Survey 21
-                https://www.bcg.com/publications/2021/measuring-emissions-accurately
+                [1]{" "}
+                <a
+                  className="underline"
+                  href="https://www.bcg.com/publications/2021/measuring-emissions-accurately"
+                >
+                  BCG Survey 21
+                </a>
               </p>
             </div>
           </div>
