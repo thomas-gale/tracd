@@ -14,7 +14,7 @@ const SouthernGolddigger = (): JSX.Element => {
   }
 
   return (
-    <div className="flex flex-col bg-primary text-primary-content space-y-2 bg-dark">
+    <div className="flex flex-col bg-primary text-primary-content space-y-2">
       {Number.isNaN(idn) || idn < 0 || idn > 47 ? (
         <h2 className="bg-error">Unrecognized bottle</h2>
       ) : (
@@ -88,6 +88,23 @@ const SouthernGolddigger = (): JSX.Element => {
               },
             ]}
           />
+          <div className="flex flex-row space-x-4 w-full px-8">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="w-1/2"
+              alt="golddigger punny image"
+              src="/matter/golddigger.png"
+            />
+            <div className="flex flex-col space-y-2 w-full">
+              <h3 className="w-full">southern gold digger lager</h3>
+              <h2 className="w-full">
+                <span>beer</span>
+                <span className="text-accent">.</span>
+                <span>tracd</span>
+                <span className="text-accent">.</span>
+              </h2>
+            </div>
+          </div>
           <div className="bg-neutral text-neutral-content p-4 px-8">
             <h1>
               <span>tracd</span>
