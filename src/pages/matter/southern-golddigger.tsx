@@ -15,11 +15,11 @@ const SouthernGolddigger = (): JSX.Element => {
 
   return (
     <div className="flex flex-col bg-primary text-primary-content space-y-2 bg-dark">
-      {Number.isNaN(idn) || idn < 0 || idn > 24 ? (
+      {Number.isNaN(idn) || idn < 0 || idn > 47 ? (
         <h2 className="bg-error">Unrecognized bottle</h2>
       ) : (
         <>
-          <div className="absolute w-1/2 p-8">
+          <div className="absolute w-3/4 p-8">
             <h2>
               bottle #<b>{idn}</b>
             </h2>
@@ -50,27 +50,27 @@ const SouthernGolddigger = (): JSX.Element => {
               },
               {
                 label: "fermentation 1",
-                info: "07/11/22 21:31 - 17/11/22 21:42 ambient 20c",
+                info: "07/11/22 21:31 - 19/11/22 11:50 ambient 20c",
               },
               {
                 label: "hops added",
-                info: "17/11/22 21.11 perle hops 50g",
+                info: "19/11/22 11:52 perle hops 50g",
               },
               {
                 label: "fermentation 2",
-                info: "17/11/22 21.14 - 22/11/22 20.05 ambient 20c",
+                info: "19/11/22 11:54 - 28/11/22 19:14 ambient 22c",
               },
               {
                 label: "hydrometer reading",
-                info: "23/11/22 21:33 10:04 alcohol content 5%",
+                info: "28/11/22 19:19 10:05 alcohol content 5%",
               },
               {
                 label: "bottled",
                 info: (
                   <>
                     <p>
-                      {"24/11/22 "}
-                      <b>{`15:${12 + idn} `}</b>
+                      {"28/11/22 "}
+                      <b>{`19:${10 + idn} `}</b>
                       {"bottle "}
                       <b>{`#${idn} `}</b>
                       {"330ml >PET< ​20ml priming sugar"}
@@ -80,7 +80,11 @@ const SouthernGolddigger = (): JSX.Element => {
               },
               {
                 label: "fermentation 3",
-                info: "17/11/22 21.14 - 22/11/22 20.05 ambient 21c​",
+                info: "28/11/22 20:22 - 04/12/22 18:12 ambient 21c",
+              },
+              {
+                label: "ready to drink",
+                info: "04/12/22",
               },
             ]}
           />
