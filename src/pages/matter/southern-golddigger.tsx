@@ -28,68 +28,84 @@ const SouthernGolddigger = (): JSX.Element => {
               <b>
                 <TracdTitle />
               </b>{" "}
-              southern gold digger lager​
+              southern gold digger lager
             </h3>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img alt="image of beer bottle" src="/matter/beer-bottle.png" />
           <InfoGrid
-            className="bg-primary p-4 px-8"
+            className="bg-primary p-4 px-4"
             rows={[
               {
+                start: "07/11/22 20:49",
                 label: "malt",
-                info: "07/11/22 20:49 southern gold digger 3L",
-              },
-              {
-                label: "water added",
-                info: "07/11 20:56 - 21:03 23l 23.5c",
-              },
-              {
-                label: "hydrometer reading",
-                info: "07/11/22 21:07 10:4",
-              },
-              {
-                label: "yeast added",
-                info: "07/11/22 21:15",
-              },
-              {
-                label: "fermentation 1",
-                info: "07/11/22 21:31 - 19/11/22 11:50 ambient 20c",
-              },
-              {
-                label: "hops added",
-                info: "19/11/22 11:52 perle hops 50g",
-              },
-              {
-                label: "fermentation 2",
-                info: "19/11/22 11:54 - 28/11/22 19:14 ambient 22c",
-              },
-              {
-                label: "hydrometer reading",
-                info: "28/11/22 19:19 10:05 alcohol content 5%",
-              },
-              {
-                label: "bottled",
                 info: (
-                  <>
-                    <p>
-                      {"28/11/22 "}
-                      <b>{`19:${10 + idn} `}</b>
-                      {"bottle "}
-                      <b>{`#${idn} `}</b>
-                      {"330ml >PET< ​20ml priming sugar"}
-                    </p>
-                  </>
+                  <div className="flex flex-wrap">
+                    {/* <span className="badge"></span> */}
+                    <div className="badge badge-accent">
+                      <p>southern gold digger 3L</p>
+                    </div>
+                  </div>
                 ),
               },
               {
-                label: "fermentation 3",
-                info: "28/11/22 20:22 - 04/12/22 18:12 ambient 21c",
+                start: "07/11/22 20:56",
+                end: "07/11/22 21:03",
+                label: "water added",
+                info: (
+                  <>
+                    {/* <span className="badge">start: </span> */}
+                    {/* <span className="badge">end: </span> */}
+                    <span className="badge badge-accent">23l 23.5c</span>
+                  </>
+                ),
               },
-              {
-                label: "ready to drink",
-                info: "04/12/22",
-              },
+              // {
+              //   label: "hydrometer reading",
+              //   info: <>07/11/22 21:07 10:4</>,
+              // },
+              // {
+              //   label: "yeast added",
+              //   info: "07/11/22 21:15",
+              // },
+              // {
+              //   label: "fermentation 1",
+              //   info: "07/11/22 21:31 - 19/11/22 11:50 ambient 20c",
+              // },
+              // {
+              //   label: "hops added",
+              //   info: "19/11/22 11:52 perle hops 50g",
+              // },
+              // {
+              //   label: "fermentation 2",
+              //   info: "19/11/22 11:54 - 28/11/22 19:14 ambient 22c",
+              // },
+              // {
+              //   label: "hydrometer reading",
+              //   info: "28/11/22 19:19 10:05 alcohol content 5%",
+              // },
+              // {
+              //   label: "bottled",
+              //   info: (
+              //     <>
+              //       <p>
+              //         {"28/11/22 "}
+              //         <b>{`19:${10 + idn} `}</b>
+              //         {"bottle "}
+              //         <b>{`#${idn} `}</b>
+              //         {"330ml >PET< ​20ml priming sugar"}
+              //       </p>
+              //     </>
+              //   ),
+              // },
+              // {
+              //   label: "fermentation 3",
+              //   info: "28/11/22 20:22 - 04/12/22 18:12 ambient 21c",
+              // },
+              // {
+              //   label: "ready to drink",
+              //   info: "04/12/22",
+              // },
             ]}
           />
           <div className="flex flex-row space-x-4 w-full px-8">
@@ -106,11 +122,11 @@ const SouthernGolddigger = (): JSX.Element => {
               </h2>
             </div>
           </div>
-          <div className="bg-neutral text-neutral-content p-4 px-8">
+          <div className="bg-base-100 text-neutral p-4 px-8">
             <h1>
               <TracdTitle />
             </h1>
-            <div className="pt-2">
+            <div className="pt-4">
               Did you know that only 9% of companies measure their total
               emissions comprehensively, while 81% confess to omitting some of
               their internal (Scopes 1 and 2) emissions. Meanwhile, 66% of
@@ -118,27 +134,27 @@ const SouthernGolddigger = (): JSX.Element => {
               emissions<sup>[1]</sup>
             </div>
             <div className="text-primary">
-              <div className="pt-2">
+              <div className="pt-4">
                 We believe that products that are &quot;sustainable&quot; should
                 be able to prove it beyond any doubt.
               </div>
-              <div className="pt-2">
+              <div className="pt-4">
                 Our mission it to create truly net zero products with 100%
                 traceability. That means tracing every step of the process, the
                 raw materials, and the energy consumption from start to finish.​
               </div>
-              <div className="pt-2">
+              <div className="pt-4">
                 Every beer and its history will be recorded on the blockchain,
                 unable to be changed, forever, for anyone to interrogate.​
               </div>
-              <h3 className="pt-2">5% alcohol</h3>
-              <h2 className="pt-2">
+              <h3 className="pt-4">5% alcohol</h3>
+              <h2 className="pt-4">
                 <span>
                   100% <TracdTitle subTitle="proof" />
                 </span>
               </h2>
             </div>
-            <div className="pt-2">
+            <div className="pt-4">
               <p className="break-words">
                 [1]{" "}
                 <a

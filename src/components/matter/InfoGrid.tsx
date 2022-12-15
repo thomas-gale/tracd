@@ -5,13 +5,26 @@ export interface InfoGridProps {
   rows: InfoGridRowProps[];
 }
 
-export const InfoGrid = (props: InfoGridProps & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) => {
+export const InfoGrid = (
+  props: InfoGridProps &
+    DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+) => {
   const { rows, ...rest } = props;
   return (
-    <div className={`grid grid-cols-1 ${rest.className}`} {...rest}>
-      {rows.map(({ label, info }) => {
-        return <InfoGridRow key={`${label}-${info}`} label={label} info={info} />;
-      })}
+    <div className={`${rest.className}`} {...rest}>
+      <ul className="steps steps-vertical">
+        {rows.map(({ start, end, label, info }) => {
+          return (
+            <InfoGridRow
+              key={`${label}-${info}`}
+              start={start}
+              end={end}
+              label={label}
+              info={info}
+            />
+          );
+        })}
+      </ul>
     </div>
   );
 };
