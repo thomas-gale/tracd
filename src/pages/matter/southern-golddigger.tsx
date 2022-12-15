@@ -66,9 +66,17 @@ const SouthernGolddigger = (): JSX.Element => {
               },
               {
                 label: "bottled",
-                info: `24/11/22 15:${
-                  12 + idn
-                } bottle #${idn} 330ml >PET< ​20ml priming sugar`,
+                info: (
+                  <>
+                    <p>
+                      {"24/11/22 "}
+                      <b>{`15:${12 + idn} `}</b>
+                      {"bottle "}
+                      <b>{`#${idn} `}</b>
+                      {"330ml >PET< ​20ml priming sugar"}
+                    </p>
+                  </>
+                ),
               },
               {
                 label: "fermentation 3",

@@ -1,6 +1,6 @@
 export interface InfoGridRowProps {
   label: string;
-  info: string;
+  info: JSX.Element | string;
   last?: boolean;
 }
 
