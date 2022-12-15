@@ -22,8 +22,9 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "hardhat.config.ts.zksync"  ],
+    "**/*.tsx",
+    "hardhat.config.ts.zksync"
+  ],
   "exclude": [
     "node_modules",
     "hardhat.config.ts.zksync"
