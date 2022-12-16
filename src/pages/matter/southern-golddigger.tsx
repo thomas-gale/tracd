@@ -39,73 +39,66 @@ const SouthernGolddigger = (): JSX.Element => {
               {
                 start: "07/11/22 20:49",
                 label: "malt",
-                info: (
-                  <div className="flex flex-wrap">
-                    {/* <span className="badge"></span> */}
-                    <div className="badge badge-accent">
-                      <p>southern gold digger 3L</p>
-                    </div>
-                  </div>
-                ),
+                info: <p className="text-sm">southern gold digger 3L</p>,
               },
               {
                 start: "07/11/22 20:56",
                 end: "07/11/22 21:03",
                 label: "water added",
+                info: <p className="text-sm">23l 23.5c</p>,
+              },
+              {
+                start: "07/11/22 21:07",
+                label: "hydrometer reading",
+                info: <p className="text-sm">10:4</p>,
+              },
+              {
+                start: "07/11/22 21:15",
+                label: "yeast added",
+              },
+              {
+                start: "07/11/22 21:31",
+                end: "19/11/22 11:50",
+                label: "fermentation 1",
+                info: <p className="text-sm">ambient 20c</p>,
+              },
+              {
+                start: "19/11/22 11:52",
+                label: "hops added",
+                info: <p className="text-sm">perle hops 50g</p>,
+              },
+              {
+                start: "19/11/22 11:54",
+                end: "28/11/22 19:14",
+                label: "fermentation 2",
+                info: <p className="text-sm">ambient 22c</p>,
+              },
+              {
+                start: "28/11/22 19:10",
+                label: "hydrometer reading",
+                info: <p className="text-sm">alcohol content 5%</p>,
+              },
+              {
+                start: `28/11/22 19:${10 + idn}`,
+                label: "bottled",
                 info: (
-                  <>
-                    {/* <span className="badge">start: </span> */}
-                    {/* <span className="badge">end: </span> */}
-                    <span className="badge badge-accent">23l 23.5c</span>
-                  </>
+                  <p className="text-sm">
+                    {"bottle "}
+                    <b>{`#${idn} `}</b>
+                    {"330ml >PET< ​20ml priming sugar"}
+                  </p>
                 ),
               },
-              // {
-              //   label: "hydrometer reading",
-              //   info: <>07/11/22 21:07 10:4</>,
-              // },
-              // {
-              //   label: "yeast added",
-              //   info: "07/11/22 21:15",
-              // },
-              // {
-              //   label: "fermentation 1",
-              //   info: "07/11/22 21:31 - 19/11/22 11:50 ambient 20c",
-              // },
-              // {
-              //   label: "hops added",
-              //   info: "19/11/22 11:52 perle hops 50g",
-              // },
-              // {
-              //   label: "fermentation 2",
-              //   info: "19/11/22 11:54 - 28/11/22 19:14 ambient 22c",
-              // },
-              // {
-              //   label: "hydrometer reading",
-              //   info: "28/11/22 19:19 10:05 alcohol content 5%",
-              // },
-              // {
-              //   label: "bottled",
-              //   info: (
-              //     <>
-              //       <p>
-              //         {"28/11/22 "}
-              //         <b>{`19:${10 + idn} `}</b>
-              //         {"bottle "}
-              //         <b>{`#${idn} `}</b>
-              //         {"330ml >PET< ​20ml priming sugar"}
-              //       </p>
-              //     </>
-              //   ),
-              // },
-              // {
-              //   label: "fermentation 3",
-              //   info: "28/11/22 20:22 - 04/12/22 18:12 ambient 21c",
-              // },
-              // {
-              //   label: "ready to drink",
-              //   info: "04/12/22",
-              // },
+              {
+                start: "28/11/22 20:22",
+                end: "04/12/22 18:12",
+                label: "fermentation 3",
+                info: <p className="text-sm">ambient 21c</p>,
+              },
+              {
+                start: "04/12/22",
+                label: "ready to drink",
+              },
             ]}
           />
           <div className="flex flex-row space-x-4 w-full px-8">

@@ -12,19 +12,17 @@ export const InfoGrid = (
   const { rows, ...rest } = props;
   return (
     <div className={`${rest.className}`} {...rest}>
-      <ul className="steps steps-vertical">
-        {rows.map(({ start, end, label, info }) => {
-          return (
-            <InfoGridRow
-              key={`${label}-${info}`}
-              start={start}
-              end={end}
-              label={label}
-              info={info}
-            />
-          );
-        })}
-      </ul>
+      {rows.map(({ start, end, label, info }) => {
+        return (
+          <InfoGridRow
+            key={`${label}-${info}`}
+            start={start}
+            end={end}
+            label={label}
+            info={info}
+          />
+        );
+      })}
     </div>
   );
 };
