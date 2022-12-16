@@ -15,11 +15,11 @@ export const InfoGridRow = ({ start, end, label, info }: InfoGridRowProps) => {
       </div>
       <div className="w-full">
         <div className="flex flex-col space-y-1 ">
-          <div className="badge badge-primary shadow-lg text-base-content">
+          <div className="badge badge-primary shadow-lg text-base-100">
             {start}
           </div>
           {!!end && (
-            <div className="badge badge-primary shadow-lg text-base-content">
+            <div className="badge badge-primary shadow-lg text-base-100">
               {end}
             </div>
           )}
