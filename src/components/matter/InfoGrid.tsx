@@ -15,7 +15,7 @@ export const InfoGrid = (
       {rows.map(({ start, end, label, info }) => {
         return (
           <InfoGridRow
-            key={`${label}-${info}`}
+            key={`${label}-${start}-${end}`}
             start={start}
             end={end}
             label={label}
