@@ -22,14 +22,14 @@ const SouthernGolddigger = (): JSX.Element => {
         <>
           <div className="absolute w-3/4 p-8">
             <h2>
-              bottle #<b>{idn}</b>
+              <b>bottle #{idn}</b>
             </h2>
             <h3>
               <b>
-                <TracdTitle />
-              </b>{" "}
-              southern gold digger lager
+                <TracdTitle subTitle="beer" />
+              </b>
             </h3>
+            <h3>southern gold digger lager</h3>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img alt="image of beer bottle" src="/matter/beer-bottle.png" />
@@ -139,8 +139,9 @@ const SouthernGolddigger = (): JSX.Element => {
               </h2>
             </div>
           </div>
-          <div className="bg-base-100 text-neutral p-4 px-8">
-            <h1>
+          {/* <div className="bg-[#242C25] text-neutral p-4 px-8"> */}
+          <div className="bg-base-300 text-primary p-4 px-8">
+            <h1 className="text-neutral">
               <TracdTitle />
             </h1>
             <div className="pt-4">
@@ -166,9 +167,8 @@ const SouthernGolddigger = (): JSX.Element => {
               </div>
               <h3 className="pt-4">5% alcohol</h3>
               <h2 className="pt-4">
-                <span>
-                  100% <TracdTitle subTitle="proof" />
-                </span>
+                <span>100% proof</span>
+                <span className="text-accent">.</span>
               </h2>
             </div>
             <div className="pt-4">
