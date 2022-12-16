@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
+import { TracdTitle } from "../tracd/TracdTitle";
 
 export const BeerTracd = () => {
   const router = useRouter();
@@ -9,8 +10,7 @@ export const BeerTracd = () => {
       <div className="flex flex-col items-center justify-center h-full w-full">
         <div className="flex flex-col justify-center space-y-4">
           <h1 className="flex justify-center">
-            <span>tracd</span>
-            <span className="text-accent">.</span>
+            <TracdTitle />
           </h1>
           <form
             onSubmit={(e) => {
