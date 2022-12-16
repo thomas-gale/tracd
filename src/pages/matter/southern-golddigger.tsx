@@ -34,7 +34,7 @@ const SouthernGolddigger = (): JSX.Element => {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img alt="image of beer bottle" src="/matter/beer-bottle.png" />
           <InfoGrid
-            className="bg-primary p-4 px-4"
+            className="bg-primary p-4 px-8"
             rows={[
               {
                 start: "07/11/22 20:49",
@@ -101,7 +101,31 @@ const SouthernGolddigger = (): JSX.Element => {
               },
             ]}
           />
-          <div className="flex flex-row space-x-4 w-full px-8">
+          <div className="px-8 text-sm">
+            <div className="flex flex-col p-2 bg-secondary rounded-md text-primary">
+              <div className="flex flex-row">
+                <p className="w-full">energy mix for production</p>
+                <p className="w-full text-neutral">100% electric from grid</p>
+              </div>
+              <div className="flex flex-row pt-4">
+                <p className="w-full">CO2 footprint of this beer</p>
+                <p className="w-full text-neutral">
+                  0.25kgCO2e<sup>*</sup>
+                </p>
+              </div>
+              <p className="text-xs pt-4">
+                *based on existing beers produced today, this is an estimate for
+                illustration purposes only​
+                <a
+                  className="underline"
+                  href="https://www.co2everything.com/co2e-of/beer"
+                >
+                  https://www.co2everything.com/co2e-of/beer
+                </a>
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-row space-x-4 w-full pt-8 px-8">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="w-1/2"
@@ -148,13 +172,13 @@ const SouthernGolddigger = (): JSX.Element => {
               </h2>
             </div>
             <div className="pt-4">
-              <p className="break-words">
-                [1]{" "}
+              <p className="break-words text-xs">
+                {"[1] BCG Survey 21 "}
                 <a
                   className="underline"
                   href="https://www.bcg.com/publications/2021/measuring-emissions-accurately"
                 >
-                  BCG Survey 21
+                  https://www.bcg.com/publications/2021/measuring-emissions-accurately
                 </a>
               </p>
             </div>
