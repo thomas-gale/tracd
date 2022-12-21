@@ -6,6 +6,7 @@ import {
   BeerTracdSurveyCols,
   BeerTracdSurveyData,
 } from "../../types/tracd/matter/BeerTracdSurveyData";
+import { ButtonGroupWithCustomField } from "./ButtonGroupWithCustom";
 import { MultiSelectButtonGroup } from "./MultiselectButtonGroup";
 
 export interface BeerTracdSurveyProps {
@@ -115,7 +116,10 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                       </button>
                     </div>
                   </div>,
-                  <div key={currentQuestion} className="flex flex-col space-y-2">
+                  <div
+                    key={currentQuestion}
+                    className="flex flex-col space-y-2"
+                  >
                     <p>What information is worth showing?</p>
                     <MultiSelectButtonGroup
                       options={[
@@ -142,8 +146,92 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                             | "blockchain"
                             | "process_steps"[],
                         });
+                        nextQuestion();
                       }}
                     />
+                  </div>,
+                  <div
+                    key={currentQuestion}
+                    className="flex flex-col space-y-2"
+                  >
+                    <p>
+                      Does having a ”story” behind an individual product mean
+                      anything to you?
+                    </p>
+                    <ButtonGroupWithCustomField
+                      options={[
+                        { id: "yes", displayName: "Yes" },
+                        {
+                          id: "no",
+                          displayName: "No",
+                        },
+                        {
+                          id: "only_premium",
+                          displayName: "Only in premium products",
+                        },
+                        {
+                          id: "custom",
+                          displayName: "...",
+                        },
+                      ]}
+                      submitText="Done"
+                      customFieldId="custom"
+                      onSubmit={(selectedId, customField) => {
+                        submitSurveyDataAsync({
+                          having_a_story: selectedId as
+                            | "yes"
+                            | "no"
+                            | "only_premium",
+                          having_a_story_custom: customField,
+                        });
+                        nextQuestion();
+                      }}
+                    />
+                  </div>,
+                  <div key={currentQuestion} className="flex flex-col">
+                    <p>How was the beer?</p>
+                    <div className="btn-group btn-group-vertical justify-center">
+                      <button
+                        className="btn"
+                        onClick={() => {
+                          submitSurveyDataAsync({ how_was_beer: "great" });
+                          nextQuestion();
+                        }}
+                      >
+                        Great
+                      </button>
+                      <button
+                        className="btn"
+                        onClick={() => {
+                          submitSurveyDataAsync({ how_was_beer: "passable" });
+                          nextQuestion();
+                        }}
+                      >
+                        Passable
+                      </button>
+                      <button
+                        className="btn"
+                        onClick={() => {
+                          submitSurveyDataAsync({
+                            how_was_beer: "stick_to_day_job",
+                          });
+                          nextQuestion();
+                        }}
+                      >
+                        Stick to your day job
+                      </button>
+                      <button
+                        className="btn"
+                        onClick={() => {
+                          submitSurveyDataAsync({
+                            how_was_beer: "can_i_have_refund",
+                          });
+                          nextQuestion();
+                        }}
+                      >
+                        Can I have a refund even though it's free, it's that bad
+                      </button>
+                    </div>
                   </div>,
                   <div key={currentQuestion} className="flex flex-col">
                     <p>{"Thank you very much :)"}</p>
