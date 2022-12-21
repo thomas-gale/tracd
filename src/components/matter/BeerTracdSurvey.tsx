@@ -6,6 +6,7 @@ import {
   BeerTracdSurveyCols,
   BeerTracdSurveyData,
 } from "../../types/tracd/matter/BeerTracdSurveyData";
+import { MultiSelectButtonGroup } from "./MultiselectButtonGroup";
 
 export interface BeerTracdSurveyProps {
   bottleId: number;
@@ -113,6 +114,36 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                         No
                       </button>
                     </div>
+                  </div>,
+                  <div key={currentQuestion} className="flex flex-col space-y-2">
+                    <p>What information is worth showing?</p>
+                    <MultiSelectButtonGroup
+                      options={[
+                        { id: "co2e", displayName: "CO2e" },
+                        {
+                          id: "recycled",
+                          displayName: "recycled / recycling info",
+                        },
+                        {
+                          id: "blockchain",
+                          displayName: "blockchain feed of data",
+                        },
+                        {
+                          id: "process_steps",
+                          displayName: "process steps / energy consumed",
+                        },
+                      ]}
+                      submitText="Done"
+                      onSubmit={(selectedOptions) => {
+                        submitSurveyDataAsync({
+                          what_information_worth_showing: selectedOptions as
+                            | "co2e"
+                            | "recycled"
+                            | "blockchain"
+                            | "process_steps"[],
+                        });
+                      }}
+                    />
                   </div>,
                   <div key={currentQuestion} className="flex flex-col">
                     <p>{"Thank you very much :)"}</p>
