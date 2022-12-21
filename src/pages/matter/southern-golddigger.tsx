@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import React, { useMemo } from "react";
-import { InfoGrid } from "../../components/matter/InfoGrid";
+import { InfoGrid } from "../../components/matter/beertracd/InfoGrid";
 import { TracdTitle } from "../../components/tracd/TracdTitle";
-import { BeerTracdSurvey } from "../../components/matter/BeerTracdSurvey";
+import { BeerTracdSurvey } from "../../components/matter/beertracd/BeerTracdSurvey";
 
 // A two step component that allows the user to first select an IPFS storage provider and then allows them to supply the hash to the webapp.
 const SouthernGolddigger = (): JSX.Element => {
