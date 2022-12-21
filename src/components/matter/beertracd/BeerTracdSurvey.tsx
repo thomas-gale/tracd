@@ -235,7 +235,10 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                       </button>
                     </div>
                   </div>,
-                  <div key={currentQuestion} className="flex flex-col">
+                  <div
+                    key={currentQuestion}
+                    className="flex flex-col space-y-2"
+                  >
                     <p>Name</p>
                     <TextQuestion
                       submitText="Done"
@@ -247,7 +250,10 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                       }}
                     />
                   </div>,
-                  <div key={currentQuestion} className="flex flex-col">
+                  <div
+                    key={currentQuestion}
+                    className="flex flex-col space-y-2"
+                  >
                     <p>Do you have any other feedback?</p>
                     <TextQuestion
                       submitText="Done"
@@ -259,7 +265,10 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                       }}
                     />
                   </div>,
-                  <div key={currentQuestion} className="flex flex-col">
+                  <div
+                    key={currentQuestion}
+                    className="flex flex-col space-y-2"
+                  >
                     <p>What is you favorite christmas film?</p>
                     <TextQuestion
                       submitText="Done"

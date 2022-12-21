@@ -138,6 +138,8 @@ const SouthernGolddigger = (): JSX.Element => {
               <h2 className="w-full">
                 <TracdTitle subTitle="beer" />
               </h2>
+              <p>brewed by Tom F</p>
+              <p>techy stuff by Tom G</p>
             </div>
           </div>
           <div className="bg-base-300 text-primary p-4 px-8">
@@ -184,7 +186,15 @@ const SouthernGolddigger = (): JSX.Element => {
             </div>
           </div>
           <div className="flex flex-col space-y-2 bg-secondary text-base-300 p-4 px-8">
-            <h2 className="text-neutral">before you go ...</h2>
+            <h2 className="text-neutral">
+              <span>before you go </span>
+              <span className="text-accent">...</span>
+            </h2>
+            <p className="text-neutral">
+              this little bottle of homemade beer is our proof of concept, so it
+              would be really awesome if you could give us feedback by answering
+              a couple of easy questions :D
+            </p>
             <BeerTracdSurvey bottleId={idn} />
           </div>
         </>

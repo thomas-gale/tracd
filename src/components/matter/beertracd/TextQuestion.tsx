@@ -9,9 +9,8 @@ export const TextQuestion = ({ submitText, onSubmit }: TextQuestionProps) => {
   const [customFeedback, setCustomFeedback] = useState("");
   return (
     <>
-      <input
-        className="input"
-        type={"text"}
+      <textarea
+        className="textarea bg-primary text-neutral"
         value={customFeedback}
         onChange={(e) => setCustomFeedback(e.target.value)}
       />

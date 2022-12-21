@@ -20,7 +20,9 @@ export const ButtonGroupWithCustomField = ({
       <div className="btn-group btn-group-vertical lg:btn-group-horizontal justify-center">
         {options.map(({ id, displayName }) => (
           <button
-            className={`btn${isCustom ? " btn-primary" : ""}`}
+            className={`btn${
+              id == customFieldId && isCustom ? " btn-primary" : ""
+            }`}
             key={id}
             onClick={() => {
               if (id === customFieldId) {
@@ -36,9 +38,8 @@ export const ButtonGroupWithCustomField = ({
       </div>
       {isCustom && (
         <>
-          <input
-            className="input"
-            type={"text"}
+          <textarea
+            className="textarea bg-primary text-neutral"
             value={customField}
             onChange={(e) => setCustomField(e.target.value)}
           />
