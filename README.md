@@ -11,6 +11,11 @@ NEXT_PUBLIC_MAPBOX_TOKEN=*****************
 yarn dev
 ```
 
+### beer.tracd. Survey stack
+- [pocketbase](https://pocketbase.io/docs/)
+- Download `pocketbase` and extract executable to repo root.
+- [linode](https://cloud.linode.com/linodes)
+
 ### Hardhat
 ```shell
 yarn hardhat help

@@ -122,3 +122,7 @@ typechain-types
 
 cache
 artifacts
+
+# Pocketbase
+pocketbase
+/pb_data
