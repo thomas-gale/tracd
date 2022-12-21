@@ -5,6 +5,10 @@ import { Provider as ReduxProvider } from "react-redux";
 import { config } from "../env/config";
 import { store } from "../state/store";
 import "../styles/globals.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+// Create a client
+const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
   return (
@@ -13,9 +17,11 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
         <title>{config.name}</title>
         <meta name="description" content={config.description} />
       </Head>
-      <ReduxProvider store={store}>
-        <Component data-theme="tracd" {...pageProps} />
-      </ReduxProvider>
+      <QueryClientProvider client={queryClient}>
+        <ReduxProvider store={store}>
+          <Component data-theme="tracd" {...pageProps} />
+        </ReduxProvider>
+      </QueryClientProvider>
     </>
   );
 }

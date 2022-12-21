@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useMemo } from "react";
 import { InfoGrid } from "../../components/matter/InfoGrid";
 import { TracdTitle } from "../../components/tracd/TracdTitle";
+import { BeerTracdSurvey } from "../../components/matter/BeerTracdSurvey";
 
 // A two step component that allows the user to first select an IPFS storage provider and then allows them to supply the hash to the webapp.
 const SouthernGolddigger = (): JSX.Element => {
@@ -139,7 +140,6 @@ const SouthernGolddigger = (): JSX.Element => {
               </h2>
             </div>
           </div>
-          {/* <div className="bg-[#242C25] text-neutral p-4 px-8"> */}
           <div className="bg-base-300 text-primary p-4 px-8">
             <h1 className="text-neutral">
               <TracdTitle />
@@ -182,6 +182,10 @@ const SouthernGolddigger = (): JSX.Element => {
                 </a>
               </p>
             </div>
+          </div>
+          <div className="flex flex-col space-y-2 bg-secondary text-base-300 p-4 px-8">
+            <h2 className="text-neutral">before you go ...</h2>
+            <BeerTracdSurvey bottleId={idn} />
           </div>
         </>
       )}
