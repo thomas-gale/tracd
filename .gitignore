@@ -124,5 +124,5 @@ cache
 artifacts
 
 # Pocketbase
-pocketbase
-/pb_data
+/pb/pocketbase
+/pb/pb_data

@@ -11,10 +11,13 @@ NEXT_PUBLIC_MAPBOX_TOKEN=*****************
 yarn dev
 ```
 
-### beer.tracd. Survey stack
+### beer.tracd. survey stack
 - [pocketbase](https://pocketbase.io/docs/)
 - Download `pocketbase` and extract executable to repo root.
 - [linode](https://cloud.linode.com/linodes)
+- `scp -r ./pb root@YOUR_SERVER_IP:/root/pb` 
+- Copy the systemd `./pb/pocketbase.service` into `/etc/systemd/system/`
+- Update the `./src/env/config.ts` survey URL to match the hosted `linode` push deployment to cloud
 
 ### Hardhat
 ```shell
