@@ -7,6 +7,7 @@ import {
   BeerTracdSurveyData,
 } from "../../../types/tracd/matter/BeerTracdSurveyData";
 import { ButtonGroupWithCustomField } from "./ButtonGroupWithCustom";
+import { TextQuestion } from "./TextQuestion";
 import { MultiSelectButtonGroup } from "./MultiselectButtonGroup";
 
 export interface BeerTracdSurveyProps {
@@ -21,7 +22,7 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
   }, []);
 
   // Survey state
-  const maxQuestionIndex = 9; // Questions are 0-indexed (and there is a final thank you message)
+  const maxQuestionIndex = 8; // Questions are 0-indexed (and there is a final thank you message)
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
 
   // Submit survey data
@@ -233,6 +234,42 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                         it&apos;s that bad
                       </button>
                     </div>
+                  </div>,
+                  <div key={currentQuestion} className="flex flex-col">
+                    <p>Name</p>
+                    <TextQuestion
+                      submitText="Done"
+                      onSubmit={(name) => {
+                        submitSurveyDataAsync({
+                          name,
+                        });
+                        nextQuestion();
+                      }}
+                    />
+                  </div>,
+                  <div key={currentQuestion} className="flex flex-col">
+                    <p>Do you have any other feedback?</p>
+                    <TextQuestion
+                      submitText="Done"
+                      onSubmit={(feedback) => {
+                        submitSurveyDataAsync({
+                          feedback,
+                        });
+                        nextQuestion();
+                      }}
+                    />
+                  </div>,
+                  <div key={currentQuestion} className="flex flex-col">
+                    <p>What is you favorite christmas film?</p>
+                    <TextQuestion
+                      submitText="Done"
+                      onSubmit={(favorite_christmas_film) => {
+                        submitSurveyDataAsync({
+                          favorite_christmas_film,
+                        });
+                        nextQuestion();
+                      }}
+                    />
                   </div>,
                   <div key={currentQuestion} className="flex flex-col">
                     <p>{"Thank you very much :)"}</p>
