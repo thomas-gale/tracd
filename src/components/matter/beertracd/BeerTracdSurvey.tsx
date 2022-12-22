@@ -60,12 +60,14 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
   return (
     <div
       ref={surveyRef}
-      className="flex flex-col space-y-2 bg-secondary text-base-100 p-8"
+      className="flex flex-col space-y-2 bg-secondary text-base-100 p-8 pb-32"
       onClick={(e) => surveyRef.current?.scrollIntoView({ behavior: "smooth" })}
     >
       <h2>
-        <span>before you go</span>
-        <span className="text-accent">...</span>
+        <b>
+          <span>before you go</span>
+          <span className="text-accent">...</span>
+        </b>
       </h2>
       <p className="pb-8">
         this little bottle of homemade beer is our proof of concept, so it would
