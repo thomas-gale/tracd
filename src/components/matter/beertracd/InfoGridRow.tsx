@@ -10,7 +10,7 @@ export const InfoGridRow = ({ start, end, label, info }: InfoGridRowProps) => {
     <div className="flex flex-row space-x-1 pb-8">
       <div className="w-full">
         <div className="w-fit bg-neutral text-xs text-neutral-content rounded-xl py-1 px-2 shadow-lg">
-          <b>{label}</b>
+          {label}
         </div>
       </div>
       <div className="w-full">
