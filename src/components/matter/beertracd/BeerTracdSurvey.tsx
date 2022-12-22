@@ -305,7 +305,7 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                 <div key={currentQuestion} className="flex flex-col space-y-6">
                   <p>{"Thank you very much :)"}</p>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/matter/santa.png"></img>
+                  <img src="/matter/santa.png" alt="Santa image"></img>
                 </div>,
               ][currentQuestion]
             }
