@@ -26,11 +26,16 @@ const SouthernGolddigger = (): JSX.Element => {
               <b>bottle #{idn}</b>
             </h2>
             <h3>
+              <span>your unique beer: </span>
+              <span className="text-secondary">southern </span>
+              <span className="text-accent">gold </span>
+              <span className="text-secondary">digger lager</span>
+            </h3>
+            <h3>
               <b>
                 <TracdTitle subTitle="beer" />
               </b>
             </h3>
-            <h3>southern gold digger lager</h3>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img alt="image of beer bottle" src="/matter/beer-bottle.png" />
