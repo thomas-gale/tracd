@@ -76,7 +76,7 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
       <p className="py-8">
         this little bottle of homemade beer is our proof of concept, so it would
         be really awesome if you could give us feedback by answering a couple of
-        easy questions :D
+        easy questions 😀
       </p>
       {!pb || isLoading ? (
         <div className="flex flex-row items-center justify-center h-24 w-full">
@@ -279,7 +279,7 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                   />
                 </div>,
                 <div key={currentQuestion} className="flex flex-col space-y-6">
-                  <p>Name</p>
+                  <p>What is your name?</p>
                   <TextQuestion
                     submitText="Done"
                     onSubmit={(name) => {
@@ -303,7 +303,7 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                   />
                 </div>,
                 <div key={currentQuestion} className="flex flex-col space-y-6">
-                  <p>{"Thank you very much :)"}</p>
+                  <p>{"Thank you very much! 🙌"}</p>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/matter/santa.png" alt="Santa image"></img>
                 </div>,

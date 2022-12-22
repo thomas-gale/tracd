@@ -235,10 +235,14 @@ const SouthernGolddigger = (): JSX.Element => {
             </h2>
             <p className="text-sm">by Tom French and Tom Gale</p>
             <p className="text-sm py-8">
-              <i>{`Dedicated to our dear friend Ben “Crouton” Houghton who passed away four years ago. He loved a pint and brewed his own once too. We finished this page on the 4 year anniversary of his passing. Forever in our hearts <3.” 21/12/18`}</i>
+              <i>{`"Dedicated to our dear friend Ben “Crouton” Houghton who passed away four years ago. He loved a pint and brewed his own once too. We finished this page on the 4 year anniversary of his passing. Forever in our hearts. ❤️” 21/12/18`}</i>
             </p>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="mask mask-squircle" alt="Picture of Ben" src="/matter/beer/ben.png" />
+            <img
+              className="mask mask-squircle"
+              alt="Picture of Ben"
+              src="/matter/beer/ben.png"
+            />
           </div>
         </>
       )}
