@@ -16,7 +16,7 @@ const SouthernGolddigger = (): JSX.Element => {
   }
 
   return (
-    <div className="flex flex-col bg-primary text-primary-content space-y-2">
+    <div className="flex flex-col bg-primary text-primary-content">
       {Number.isNaN(idn) || idn < 0 || idn > 47 ? (
         <h2 className="bg-error">Unrecognized bottle</h2>
       ) : (
@@ -126,13 +126,11 @@ const SouthernGolddigger = (): JSX.Element => {
               </p>
             </div>
           </div>
-          <div className="flex flex-row space-x-4 w-full pt-8 px-8">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className="w-1/2"
-              alt="golddigger punny image"
-              src="/matter/golddigger.png"
-            />
+          <div className="flex flex-row space-x-4 w-full p-4 px-8">
+            <div className="flex flex-col justify-center items-center w-full">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img alt="golddigger punny image" src="/matter/golddigger.png" />
+            </div>
             <div className="flex flex-col space-y-2 w-full">
               <h3 className="w-full">southern gold digger lager</h3>
               <h2 className="w-full">
@@ -185,17 +183,57 @@ const SouthernGolddigger = (): JSX.Element => {
               </p>
             </div>
           </div>
-          <div className="flex flex-col space-y-2 bg-secondary text-base-300 p-4 px-8">
-            <h2 className="text-neutral">
-              <span>before you go </span>
-              <span className="text-accent">...</span>
+          <BeerTracdSurvey bottleId={idn} />
+          <div className="p-4 px-8">
+            <h2>
+              <span>Bonus Content</span>
+              <span className="text-accent">.</span>
             </h2>
-            <p className="text-neutral">
-              this little bottle of homemade beer is our proof of concept, so it
-              would be really awesome if you could give us feedback by answering
-              a couple of easy questions :D
-            </p>
-            <BeerTracdSurvey bottleId={idn} />
+            <p>{`asdfasdf asdfasdfa asdfasdfasfd 
+            asdfasdfasdf
+            asdfasdf
+            asdfasdfasdf
+            asdfasdf
+            asdf
+            asdf
+            asdff
+
+            asdfasdfasdf
+            asdfasdfasdf
+            asdfasdfasdf
+            asdfasdfasdf
+            asdfasdfasdf
+            asdfasdf
+            asdfasdfasdf
+            asdfasdf
+            asdf
+            asdf
+            asdff
+            asdfasdf
+            asdfasdfasdf
+            asdfasdf
+            asdf
+            asdf
+            asdff
+            asdfasdf
+            asdfasdfasdf
+            asdfasdf
+            asdf
+            asdf
+            asdff
+            asdfasdf
+            asdfasdfasdf
+            asdfasdf
+            asdf
+            asdf
+            asdff
+            asdfasdf
+            asdfasdfasdf
+            asdfasdf
+            asdf
+            asdf
+            asdff
+            asdf`}</p>
           </div>
         </>
       )}
