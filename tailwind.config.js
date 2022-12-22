@@ -8,7 +8,6 @@ module.exports = {
       },
     },
   },
-  plugins: [require("daisyui")],
   daisyui: {
     themes: [
       {
@@ -25,6 +24,8 @@ module.exports = {
         },
       },
     ],
-    darkMode: "tracd"
+    darkMode: "class",
+    darkTheme: "tracd",
   },
+  plugins: [require("daisyui")],
 };
