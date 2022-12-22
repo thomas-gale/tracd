@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
-import Image from "next/image";
 import React, { useMemo } from "react";
 import { InfoGrid } from "../../components/matter/beertracd/InfoGrid";
 import { TracdTitle } from "../../components/tracd/TracdTitle";
 import { BeerTracdSurvey } from "../../components/matter/beertracd/BeerTracdSurvey";
+import { Carousel } from "../../components/matter/beertracd/Carousel";
 
 // A two step component that allows the user to first select an IPFS storage provider and then allows them to supply the hash to the webapp.
 const SouthernGolddigger = (): JSX.Element => {
@@ -162,7 +162,7 @@ const SouthernGolddigger = (): JSX.Element => {
                 be able to prove it beyond any doubt.
               </div>
               <div className="pt-4">
-                Our mission it to create truly net zero products with 100%
+                Our mission is to create truly net zero products with 100%
                 traceability. That means tracing every step of the process, the
                 raw materials, and the energy consumption from start to finish.​
               </div>
@@ -189,56 +189,32 @@ const SouthernGolddigger = (): JSX.Element => {
             </div>
           </div>
           <BeerTracdSurvey bottleId={idn} />
-          <div className="p-4 px-8">
+          <div className="flex flex-col p-4 px-8 pb-8 space-y-2">
             <h2>
               <span>Bonus Content</span>
               <span className="text-accent">.</span>
             </h2>
-            <p>{`asdfasdf asdfasdfa asdfasdfasfd 
-            asdfasdfasdf
-            asdfasdf
-            asdfasdfasdf
-            asdfasdf
-            asdf
-            asdf
-            asdff
-
-            asdfasdfasdf
-            asdfasdfasdf
-            asdfasdfasdf
-            asdfasdfasdf
-            asdfasdfasdf
-            asdfasdf
-            asdfasdfasdf
-            asdfasdf
-            asdf
-            asdf
-            asdff
-            asdfasdf
-            asdfasdfasdf
-            asdfasdf
-            asdf
-            asdf
-            asdff
-            asdfasdf
-            asdfasdfasdf
-            asdfasdf
-            asdf
-            asdf
-            asdff
-            asdfasdf
-            asdfasdfasdf
-            asdfasdf
-            asdf
-            asdf
-            asdff
-            asdfasdf
-            asdfasdfasdf
-            asdfasdf
-            asdf
-            asdf
-            asdff
-            asdf`}</p>
+            <Carousel
+              uniqueId="bonus-content"
+              images={[
+                "/matter/beer/beers1.png",
+                "/matter/beer/beers2.png",
+                "/matter/beer/beers3.png",
+                "/matter/beer/beers4.png",
+                "/matter/beer/beers5.png",
+                "/matter/beer/beers6.png",
+                "/matter/beer/beers7.png",
+                "/matter/beer/beers8.png",
+              ]}
+            />
+            <h2>
+              <TracdTitle subTitle="beer" />
+            </h2>
+            <p>by Tom French and Tom Gale</p>
+            <p className="pt-4">
+              <i>{`Dedicated to our dear friend Ben “Crouton” Houghton who passed away four years ago. He loved a pint and brewed his own once too. We finished this page on the 4 year anniversary of his passing. Forever in our hearts <3.” 21/12/18`}</i>
+            </p>
+            <img className="mask mask-squircle" src="/matter/beer/ben.png" />
           </div>
         </>
       )}

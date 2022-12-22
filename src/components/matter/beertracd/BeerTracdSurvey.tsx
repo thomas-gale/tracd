@@ -74,8 +74,8 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
       </p>
 
       {!pb || isLoading ? (
-        <div className="flex flex-row items-center justify-center h-20 w-full">
-          <div className="flex flex-col items-center justify-center h-20 w-full">
+        <div className="flex flex-row items-center justify-center h-24 w-full">
+          <div className="flex flex-col items-center justify-center h-24 w-full">
             <div className="btn btn-secondary loading" />
           </div>
         </div>
