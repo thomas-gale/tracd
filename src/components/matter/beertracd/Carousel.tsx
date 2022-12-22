@@ -21,7 +21,7 @@ export const Carousel = ({ uniqueId, images }: CarouselProps) => {
               <img
                 src={image}
                 alt="carousel image"
-                className="max-h-48 object-contain justify-center"
+                className="max-h-60 object-contain justify-center"
               />
             </div>
           </div>

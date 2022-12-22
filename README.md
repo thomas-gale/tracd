@@ -15,7 +15,7 @@ yarn dev
 - [pocketbase](https://pocketbase.io/docs/)
 - Download `pocketbase` and extract executable to repo root.
 - [linode](https://cloud.linode.com/linodes)
-- `scp -r ./pb root@YOUR_SERVER_IP:/root/pb` 
+- `scp -r ./pb root@survey.tracd.co.uk:/root/pb` 
 - Copy the systemd `./pb/pocketbase.service` into `/etc/systemd/system/`
 - Update the `./src/env/config.ts` survey URL to match the hosted `linode` push deployment to cloud
 
