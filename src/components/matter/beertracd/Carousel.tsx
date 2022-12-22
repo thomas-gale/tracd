@@ -8,31 +8,32 @@ export interface CarouselProps {
 export const Carousel = ({ uniqueId, images }: CarouselProps) => {
   const len = useMemo(() => images.length, [images]);
   return (
-    <div className="carousel w-full">
-      {images.map((image, index) => (
-        <div
-          id={`slide-${uniqueId}-${index}`}
-          key={image}
-          className="carousel-item relative w-full"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={image} alt="carousel image" className="object-contain"/>
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a
-              href={`#slide-${uniqueId}-${(len + index - 1) % len}`}
-              className="btn btn-circle"
-            >
-              ❮
-            </a>
-            <a
-              href={`#slide-${uniqueId}-${(index + 1) % len}`}
-              className="btn btn-circle"
-            >
-              ❯
-            </a>
+    <>
+      <div className="carousel w-full">
+        {images.map((image, index) => (
+          <div
+            id={`slide-${uniqueId}-${index}`}
+            key={image}
+            className="carousel-item relative w-full"
+          >
+            <div className="flex justify-center w-full items-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={image}
+                alt="carousel image"
+                className="max-h-48 object-contain justify-center"
+              />
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+      <div className="flex justify-center w-full py-2 gap-2">
+        {images.map((_, i) => (
+          <a key={i} href={`#slide-${uniqueId}-${i}`} className="btn btn-xs">
+            {i + 1}
+          </a>
+        ))}
+      </div>
+    </>
   );
 };

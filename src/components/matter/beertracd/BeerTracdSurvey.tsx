@@ -25,7 +25,7 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
   const surveyRef = useRef<HTMLDivElement>(null);
 
   // Survey state
-  const maxQuestionIndex = 8; // Questions are 0-indexed (and there is a final thank you message)
+  const maxQuestionIndex = 9; // Questions are 0-indexed (and there is a final thank you message)
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
 
   // Submit survey data
@@ -60,19 +60,18 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
   return (
     <div
       ref={surveyRef}
-      className="flex flex-col space-y-2 bg-secondary text-base-300 p-4 px-8"
+      className="flex flex-col space-y-2 bg-secondary text-base-100 p-8"
       onClick={(e) => surveyRef.current?.scrollIntoView({ behavior: "smooth" })}
     >
-      <h2 className="text-neutral">
+      <h2>
         <span>before you go</span>
         <span className="text-accent">...</span>
       </h2>
-      <p className="text-neutral">
+      <p className="pb-8">
         this little bottle of homemade beer is our proof of concept, so it would
         be really awesome if you could give us feedback by answering a couple of
         easy questions :D
       </p>
-
       {!pb || isLoading ? (
         <div className="flex flex-row items-center justify-center h-24 w-full">
           <div className="flex flex-col items-center justify-center h-24 w-full">
@@ -84,8 +83,8 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
           <div className="flex flex-col">
             {
               [
-                <div key={currentQuestion} className="flex flex-col">
-                  <p>Is this information interesting?</p>
+                <div key={currentQuestion} className="flex flex-col space-y-6">
+                  <p>Is the information above interesting?</p>
                   <div className="btn-group justify-center">
                     <button
                       className="btn"
@@ -111,7 +110,7 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                     </button>
                   </div>
                 </div>,
-                <div key={currentQuestion} className="flex flex-col">
+                <div key={currentQuestion} className="flex flex-col space-y-6">
                   <p>
                     Are you more likely to buy a product if it publishes its CO2
                     footprint?
@@ -137,7 +136,7 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                     </button>
                   </div>
                 </div>,
-                <div key={currentQuestion} className="flex flex-col space-y-2">
+                <div key={currentQuestion} className="flex flex-col space-y-6">
                   <p>What information is worth showing?</p>
                   <MultiSelectButtonGroup
                     options={[
@@ -168,7 +167,19 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                     }}
                   />
                 </div>,
-                <div key={currentQuestion} className="flex flex-col space-y-2">
+                <div key={currentQuestion} className="flex flex-col space-y-6">
+                  <p>Any other information worth showing?</p>
+                  <TextQuestion
+                    submitText="Done"
+                    onSubmit={(any_other_information_worth_showing) => {
+                      submitSurveyDataAsync({
+                        any_other_information_worth_showing,
+                      });
+                      nextQuestion();
+                    }}
+                  />
+                </div>,
+                <div key={currentQuestion} className="flex flex-col space-y-6">
                   <p>
                     Does having a ”story” behind an individual product mean
                     anything to you?
@@ -203,7 +214,7 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                     }}
                   />
                 </div>,
-                <div key={currentQuestion} className="flex flex-col">
+                <div key={currentQuestion} className="flex flex-col space-y-6">
                   <p>How was the beer?</p>
                   <div className="btn-group btn-group-vertical justify-center">
                     <button
@@ -249,19 +260,7 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                     </button>
                   </div>
                 </div>,
-                <div key={currentQuestion} className="flex flex-col space-y-2">
-                  <p>Name</p>
-                  <TextQuestion
-                    submitText="Done"
-                    onSubmit={(name) => {
-                      submitSurveyDataAsync({
-                        name,
-                      });
-                      nextQuestion();
-                    }}
-                  />
-                </div>,
-                <div key={currentQuestion} className="flex flex-col space-y-2">
+                <div key={currentQuestion} className="flex flex-col space-y-6">
                   <p>Do you have any other feedback?</p>
                   <TextQuestion
                     submitText="Done"
@@ -273,7 +272,19 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                     }}
                   />
                 </div>,
-                <div key={currentQuestion} className="flex flex-col space-y-2">
+                <div key={currentQuestion} className="flex flex-col space-y-6">
+                  <p>Name</p>
+                  <TextQuestion
+                    submitText="Done"
+                    onSubmit={(name) => {
+                      submitSurveyDataAsync({
+                        name,
+                      });
+                      nextQuestion();
+                    }}
+                  />
+                </div>,
+                <div key={currentQuestion} className="flex flex-col space-y-6">
                   <p>What is you favorite christmas film?</p>
                   <TextQuestion
                     submitText="Done"
@@ -285,8 +296,9 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
                     }}
                   />
                 </div>,
-                <div key={currentQuestion} className="flex flex-col">
+                <div key={currentQuestion} className="flex flex-col space-y-6">
                   <p>{"Thank you very much :)"}</p>
+                  <img src="/matter/santa.png"></img>
                 </div>,
               ][currentQuestion]
             }

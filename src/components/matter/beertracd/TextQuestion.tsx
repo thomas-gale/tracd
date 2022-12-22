@@ -10,7 +10,7 @@ export const TextQuestion = ({ submitText, onSubmit }: TextQuestionProps) => {
   return (
     <>
       <textarea
-        className="textarea bg-primary text-neutral"
+        className="textarea bg-primary"
         value={customFeedback}
         onChange={(e) => setCustomFeedback(e.target.value)}
       />

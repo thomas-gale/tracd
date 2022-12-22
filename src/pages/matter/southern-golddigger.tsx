@@ -27,9 +27,11 @@ const SouthernGolddigger = (): JSX.Element => {
             </h2>
             <h3>
               <span>your unique beer: </span>
-              <span className="text-secondary">southern </span>
-              <span className="text-accent">gold </span>
-              <span className="text-secondary">digger lager</span>
+              <b>
+                <span className="text-secondary">southern </span>
+                <span className="text-accent">gold </span>
+                <span className="text-secondary">digger lager</span>
+              </b>
             </h3>
             <h3>
               <b>
@@ -107,19 +109,23 @@ const SouthernGolddigger = (): JSX.Element => {
               },
             ]}
           />
-          <div className="px-8 text-sm">
+          <div className="p-8 text-sm">
             <div className="flex flex-col p-2 bg-secondary rounded-md text-primary">
               <div className="flex flex-row">
-                <p className="w-full">energy mix for production</p>
+                <p className="w-full">
+                  <b>energy mix for production</b>
+                </p>
                 <p className="w-full text-neutral">100% electric from grid</p>
               </div>
               <div className="flex flex-row pt-4">
-                <p className="w-full">CO2 footprint of this beer</p>
+                <p className="w-full">
+                  <b>CO2 footprint of this beer</b>
+                </p>
                 <p className="w-full text-neutral">
                   0.25kgCO2e<sup>*</sup>
                 </p>
               </div>
-              <p className="text-xs pt-4">
+              <p className="text-xs pt-8">
                 *based on existing beers produced today, this is an estimate for
                 illustration purposes only​
                 <a
@@ -131,32 +137,42 @@ const SouthernGolddigger = (): JSX.Element => {
               </p>
             </div>
           </div>
-          <div className="flex flex-row space-x-4 w-full p-4 px-8">
+          <div className="flex flex-row space-x-4 w-full p-8">
             <div className="flex flex-col justify-center items-center w-full">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img alt="golddigger punny image" src="/matter/golddigger.png" />
             </div>
             <div className="flex flex-col space-y-2 w-full">
-              <h3 className="w-full">southern gold digger lager</h3>
+              <h4 className="w-full text-secondary">
+                <b>
+                  <span>southern </span>
+                  <span className="text-accent">gold </span>
+                  <span>digger lager</span>
+                </b>
+              </h4>
               <h2 className="w-full">
                 <TracdTitle subTitle="beer" />
               </h2>
-              <p>brewed by Tom F</p>
-              <p>techy stuff by Tom G</p>
+              <div>
+                <p className="text-xs">brewed by Tom F</p>
+                <p className="text-xs">techy stuff by Tom G</p>
+              </div>
             </div>
           </div>
-          <div className="bg-base-300 text-primary p-4 px-8">
+          <div className="bg-base-300 text-primary p-8">
             <h1 className="text-neutral">
-              <TracdTitle />
+              <b>
+                <TracdTitle />
+              </b>
             </h1>
-            <div className="pt-4">
+            <div className="pt-4 text-secondary">
               Did you know that only 9% of companies measure their total
               emissions comprehensively, while 81% confess to omitting some of
               their internal (Scopes 1 and 2) emissions. Meanwhile, 66% of
               organisations do not report any of their external (Scope 3)
               emissions<sup>[1]</sup>
             </div>
-            <div className="text-primary">
+            <div className="text-secondary">
               <div className="pt-4">
                 We believe that products that are &quot;sustainable&quot; should
                 be able to prove it beyond any doubt.
@@ -171,12 +187,14 @@ const SouthernGolddigger = (): JSX.Element => {
                 unable to be changed, forever, for anyone to interrogate.​
               </div>
               <h3 className="pt-4">5% alcohol</h3>
-              <h2 className="pt-4">
-                <span>100% proof</span>
-                <span className="text-accent">.</span>
+              <h2>
+                <b>
+                  <span>100% proof</span>
+                  <span className="text-accent">.</span>
+                </b>
               </h2>
             </div>
-            <div className="pt-4">
+            <div className="pt-8 text-secondary">
               <p className="break-words text-xs">
                 {"[1] BCG Survey 21 "}
                 <a

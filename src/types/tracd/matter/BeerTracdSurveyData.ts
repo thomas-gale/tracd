@@ -6,6 +6,7 @@ export interface BeerTracdSurveyData {
     | "recycled"
     | "blockchain"
     | "process_steps"[];
+  any_other_information_worth_showing?: string;
   having_a_story?: "yes" | "no" | "only_premium" | "custom";
   having_a_story_custom?: string;
   how_was_beer?:
