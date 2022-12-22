@@ -207,13 +207,12 @@ const SouthernGolddigger = (): JSX.Element => {
             </div>
           </div>
           <BeerTracdSurvey bottleId={idn} />
-          <div className="flex flex-col p-8 space-y-2">
-            <h2>
-              <b>
-                <span>Bonus Content</span>
-                <span className="text-accent">.</span>
-              </b>
-            </h2>
+          <div className="flex flex-col p-8 space-y-2 w-full items-center">
+            <h3 className="justify-center">
+              <span>bonus content</span>
+              <span className="text-accent">.</span>
+            </h3>
+            <h3 className="justify-center pb-2">↓</h3>
             <Carousel
               uniqueId="bonus-content"
               images={[

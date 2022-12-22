@@ -73,7 +73,7 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
           <span className="text-accent">...</span>
         </b>
       </h2>
-      <p className="pb-8">
+      <p className="py-8">
         this little bottle of homemade beer is our proof of concept, so it would
         be really awesome if you could give us feedback by answering a couple of
         easy questions :D
