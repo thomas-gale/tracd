@@ -36,7 +36,11 @@ export const BeerTracdSurvey = ({ bottleId }: BeerTracdSurveyProps) => {
         bottle_number: bottleId,
         ...data,
       };
-      await pb.collection("feedback").create(feedbackData);
+      try {
+        await pb.collection("feedback").create(feedbackData);
+      } catch (e) {
+        console.error("Unable to create feedback", e);
+      }
     },
   });
 
