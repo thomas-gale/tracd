@@ -160,7 +160,7 @@ const SouthernGolddigger = (): JSX.Element => {
             </div>
           </div>
           <div className="bg-base-300 text-primary p-8">
-            <h1 className="text-neutral">
+            <h1 className="text-primary">
               <b>
                 <TracdTitle />
               </b>
@@ -207,7 +207,7 @@ const SouthernGolddigger = (): JSX.Element => {
             </div>
           </div>
           <BeerTracdSurvey bottleId={idn} />
-          <div className="flex flex-col p-4 px-8 pb-8 space-y-2">
+          <div className="flex flex-col p-8 space-y-2">
             <h2>
               <span>Bonus Content</span>
               <span className="text-accent">.</span>
@@ -225,11 +225,15 @@ const SouthernGolddigger = (): JSX.Element => {
                 "/matter/beer/beers8.png",
               ]}
             />
-            <h2>
-              <TracdTitle subTitle="beer" />
+          </div>
+          <div className="bg-base-100 text-secondary flex flex-col p-8 space-y-2">
+            <h2 className="text-primary">
+              <b>
+                <TracdTitle subTitle="beer" />
+              </b>
             </h2>
-            <p>by Tom French and Tom Gale</p>
-            <p className="pt-4">
+            <p className="text-sm">by Tom French and Tom Gale</p>
+            <p className="text-sm py-8">
               <i>{`Dedicated to our dear friend Ben “Crouton” Houghton who passed away four years ago. He loved a pint and brewed his own once too. We finished this page on the 4 year anniversary of his passing. Forever in our hearts <3.” 21/12/18`}</i>
             </p>
             <img className="mask mask-squircle" src="/matter/beer/ben.png" />
