@@ -206,7 +206,6 @@ const SouthernGolddigger = (): JSX.Element => {
               </p>
             </div>
           </div>
-          <BeerTracdSurvey bottleId={idn} />
           <div className="flex flex-col p-8 space-y-2 w-full items-center">
             <h3 className="justify-center">
               <span>bonus content</span>
